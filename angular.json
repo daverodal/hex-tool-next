@@ -7,7 +7,7 @@
       "root": "",
       "sourceRoot": "src",
       "projectType": "application",
-      "prefix": "app",
+      "prefix": "htn",
       "schematics": {
         "@schematics/angular:component": {
           "styleext": "scss"
@@ -27,9 +27,12 @@
               "src/assets"
             ],
             "styles": [
-              "src/styles.scss"
+              "src/styles.scss",
+              "src/otherstyles.scss"
             ],
-            "scripts": []
+            "scripts": [],
+            "deployUrl": "/modern/",
+            "baseHref": "/modern/"
           },
           "configurations": {
             "production": {
@@ -61,7 +64,8 @@
         "serve": {
           "builder": "@angular-devkit/build-angular:dev-server",
           "options": {
-            "browserTarget": "hex-tool-next:build"
+            "browserTarget": "hex-tool-next:build",
+            "proxyConfig": "proxy.config.json"
           },
           "configurations": {
             "production": {

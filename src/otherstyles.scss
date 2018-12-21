@@ -1,0 +1,67 @@
+@import "~bootstrap/scss/bootstrap";
+@import "~bootstrap/scss/mixins";
+$fa-font-path: '~font-awesome/fonts';
+@import "~font-awesome/scss/font-awesome";
+
+.container.map-edit{
+
+  margin-left: 20px;
+  input{
+  }
+}
+.map-url-input{
+  width:700px;
+}
+
+.flashy{
+  width: 50%;
+  margin: auto;
+  border:10px solid #aaa;
+  border-radius: 10px;
+
+}
+ul{
+  list-style-type:none;
+}
+body{
+  font-size:16px;
+}
+.left-col{
+  @include make-col(3);
+  ul{
+    list-style-type:none;
+
+  }
+}
+.middle-col{
+  @include make-col(3);
+}
+.right-col{
+  @include make-col(6);
+}
+@import "mixin";
+
+.text-right{
+  text-align:right;
+  justify-content:flex-end;
+}
+
+#map-wrapper{
+  position: relative;
+  #canvas-id{
+    z-index:2;
+    position: absolute;
+  }
+  #map-image{
+    position:absolute;
+  }
+}
+
+
+.flash-message{
+  position: absolute;
+  opacity: .9;
+  top: 30px;
+  width: 90%;
+  left: 5%;
+}

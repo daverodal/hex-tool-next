@@ -1,0 +1,36 @@
+<p>
+  Edit/Add/Remove Custom Properties
+</p>
+<div *ngIf="fetching"><i class="fa fa-spinner fa-spin"></i></div>
+<div class="container-fluid">
+  <div class="row">
+    <div class="col-8">
+      <div class="row">
+        <div class="col-3"> Name</div>
+        <div class="col-3"> Color</div>
+        <div class="col-3"> Disp</div>
+      </div>
+      <div class="row" *ngFor="let item of properties | keyvalue">
+        <div class="col-3">
+          {{item.key}}
+        </div>
+        <div class="col-3">
+          {{item.value.color}}
+        </div>
+        <div class="col-3">
+          {{item.value.disp}}
+        </div>
+        <div class="col-3">
+          <button (click)="editProperty(item)">Edit</button>
+          <button (click)="killProperty(item.key)">Kill</button>
+        </div>
+      </div>
+      <htn-terrain-property (propertyCreated)="addProperty($event)"></htn-terrain-property>
+    </div>
+  </div>
+</div>
+
+<button (click)="addRevolt()">add revolt template</button><br>
+
+<button class="btn btn-primary btn-sm" (click)="saveHex()">Save</button>
+<button class="btn btn-secondary btn-sm" (click)="cancelHex()">Cancel</button>

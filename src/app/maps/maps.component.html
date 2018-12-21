@@ -1,0 +1,15 @@
+<div class="">
+  <a class="breadcrumb-item " [routerLink]="['']">home</a>&nbsp;
+  <span class="breadcrumb-item active" [routerLink]="['maps']">maps</span>
+</div>
+<button (click)="newMap()">New Map</button>
+<div class="container-fluid">
+  <ul>
+    <li *ngFor="let map of maps ">
+      <htn-map-item [mapInfo]="map" ></htn-map-item>
+    </li>
+  </ul>
+
+</div>
+
+

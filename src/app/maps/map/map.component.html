@@ -1,0 +1,41 @@
+<div class="">
+  <a class="breadcrumb-item " [routerLink]="['']">home</a>&nbsp;
+  <a class="breadcrumb-item" [routerLink]="['/maps']">maps</a>
+  <span class="breadcrumb-item active">map </span>
+</div><div *ngIf="map">
+  <a class="edit-buttons" [routerLink]="'edit'">edit </a>
+  <a class="edit-buttons" [routerLink]="'hexes'">hexes </a>
+  <a class="edit-buttons" [routerLink]="'properties'">terrain </a>
+  <br>
+  <button class="btn btn-sm btn-primary" (click)="publishMe()">Publish!</button>
+  <button class="btn btn-sm btn-sedondary" (click)="cloneMe()">Clone!</button>
+  <button class="btn btn-sm btn-sedondary" (click)="deleteMe()">Delete!</button>
+
+  <div *ngIf="publishing"> <i class="fa fa-spinner fa-pulse"></i></div>
+  <div class="container">
+    <div class="row">
+      <div class="col-3 text-right">Url:</div>
+      <div class="col-9">{{map.mapUrl}}</div>
+    </div>
+    <div class="row">
+      <div class="col-3 text-right">Name:</div>
+      <div class="col-9">{{map.gameName}}</div>
+    </div>
+    <div class="row">
+      <div class="col-3 text-right">Width:</div>
+      <div class="col-9">{{map.mapWidth}}</div>
+    </div>
+    <div class="row">
+      <div class="col-3 text-right">numX:</div>
+      <div class="col-9">{{map.numX}}</div>
+    </div>
+    <div class="row">
+      <div class="col-3 text-right">numY:</div>
+      <div class="col-9">{{map.numY}}</div>
+    </div>
+  </div>
+</div>
+<p *ngIf="!loaded">
+  gimme a sec, just one sec
+</p>
+<htn-hex-map [map]="map" [mapId]="mapId"></htn-hex-map>
