@@ -1,4 +1,4 @@
-import {Component, OnInit, Input, OnChanges, DoCheck} from '@angular/core';
+import {Component, OnInit, Input, OnChanges, DoCheck, ViewChild, ElementRef} from '@angular/core';
 import { MapInfo } from '../map-info';
 import {HexDrawService} from "./hex-draw.service";
 import { MapsService } from "../../maps.service";
@@ -15,6 +15,9 @@ export class HexMapComponent implements OnInit , OnChanges , DoCheck  {
   @Input() map: MapInfo;
   @Input() mapId: string;
 
+
+  @ViewChild('mapimage')
+  myImage: ElementRef
 
   ngDoCheck(){
   }

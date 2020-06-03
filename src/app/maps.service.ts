@@ -4,6 +4,7 @@ import {Http, Response, Headers} from '@angular/http';
 import {HttpErrorResponse} from '@angular/common/http';
 import {FlashMessagesService} from 'angular2-flash-messages';
 import { map } from 'rxjs/operators';
+import * as _ from 'lodash';
 
 var x;
 
@@ -124,6 +125,7 @@ export class MapsService {
               map.y)
             );
           }
+          this.maps = _.orderBy(this.maps, 'gameName')
           callback(this);
         },
         (error: HttpErrorResponse) => {

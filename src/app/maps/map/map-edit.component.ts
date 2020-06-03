@@ -70,6 +70,7 @@ export class MapEditComponent implements OnInit, OnChanges, DoCheck {
     this.map.c = this.map.c - 0;
     this.map.numX = this.map.numX - 0;
     this.map.numY = this.map.numY - 0;
+    this.map.mapHeight = this.hexMap.myImage.nativeElement.height;
 
 
     this.maps.saveData(this.mapId, {map: this.map}, maps =>{
